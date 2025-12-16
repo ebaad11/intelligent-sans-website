@@ -1,0 +1,269 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-color: #F5F3EF;
+    --text-color: #2d2d2d;
+    --text-muted: #6b6b6b;
+    --accent-color: #1a1a1a;
+    --border-color: #d4d4d4;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* ===== Container ===== */
+.container {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+}
+
+/* ===== Font Showcase ===== */
+.font-showcase {
+    /* Takes up full viewport height minus padding to center the font */
+    min-height: 80vh;
+    min-height: 80dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    /* Allow it to stretch much wider like Socratica */
+    max-width: 1400px;
+}
+
+/* ===== Font Display ===== */
+.font-display {
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+}
+
+.font-display img {
+    width: 100%;
+    /* Allow image to be very large */
+    max-width: 90vw;
+    height: auto;
+    /* Remove strict height limit to allow stretching, or make it very loose */
+    max-height: 65vh;
+    object-fit: contain;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+    /* Optional: removing border radius for a sharper, cleaner look if preferred, 
+       but keeping slight one for modern feel */
+    border-radius: 0;
+}
+
+.font-display:hover img {
+    opacity: 0.95;
+    transform: scale(1.005);
+}
+
+.font-display:active img {
+    opacity: 0.85;
+    transform: scale(0.995);
+}
+
+.click-hint {
+    display: none;
+    /* Super minimal - hide the hint */
+}
+
+/* ===== Prompt Row ===== */
+.prompt-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Aligned to the right */
+    gap: 1rem;
+    width: 100%;
+    /* Removed max-width constraint to let it push to the edge */
+    margin-top: 2rem;
+    padding: 0;
+    /* Remove padding to align strictly with container/image edge */
+}
+
+.font-prompt {
+    font-size: 1.125rem;
+    /* Switching to Serif to match the 'We host...' text in example */
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    /* Keep italic or normal based on preference, keeping italic for 'prompt' feel */
+    color: var(--text-color);
+    text-align: right;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* ===== Download Button (Next to Prompt) ===== */
+.download-btn {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    /* Circle shape for minimal look? Or keep rounded rect. Let's try circle */
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+}
+
+.download-btn:active {
+    transform: scale(0.95);
+}
+
+/* ===== Waitlist Section ===== */
+.waitlist-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    /* Push to "second page" - full screen scroll roughly */
+    margin-top: 30vh;
+    padding-bottom: 6rem;
+}
+
+.waitlist-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+
+.waitlist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.email-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+    font-family: var(--font-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    /* Slightly sharper */
+    background: transparent;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.email-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.email-input:focus {
+    border-color: var(--text-color);
+}
+
+.waitlist-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.8125rem;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.waitlist-btn:hover {
+    opacity: 0.9;
+}
+
+.waitlist-btn:active {
+    transform: scale(0.98);
+}
+
+/* ===== Responsive - Tablet & Desktop ===== */
+@media (min-width: 640px) {
+    .container {
+        padding: 0 3rem;
+    }
+
+    .font-display img {
+        /* Even wider on desktop */
+        max-width: 85vw;
+        max-height: 75vh;
+    }
+
+    .font-prompt {
+        font-size: 1.375rem;
+        text-align: right;
+    }
+
+    .waitlist {
+        flex-direction: row;
+    }
+
+    .email-input {
+        flex: 1;
+    }
+
+    .waitlist-btn {
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 4rem;
+    }
+
+    .font-showcase {
+        max-width: 1600px;
+    }
+
+    .font-prompt {
+        font-size: 1.75rem;
+    }
+
+    /*Socractica style often has huge wide text. Let's allow the image to really breathe.*/
+}
