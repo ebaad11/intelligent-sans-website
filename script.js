@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initJoinBetaButton();
     initDownloadButton();
     initIntersectionObserver();
+    initFontLoader();
 });
 
 // ========================================
@@ -179,6 +180,42 @@ function handleDownload() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+}
+
+// ========================================
+// FONT LOADER - WAIT FOR FONT TO DOWNLOAD
+// ========================================
+
+function initFontLoader() {
+    const heroText1 = document.querySelector('.hero-text-1');
+    
+    if (!heroText1) return;
+    
+    // Font URL from GitHub
+    const fontUrl = 'https://raw.githubusercontent.com/ebaad11/fonts_outputs/main/lines.ttf';
+    
+    // Use Font Loading API to wait for the font to actually download
+    if ('fonts' in document) {
+        const font = new FontFace('Intelligent Sans', `url(${fontUrl})`);
+        
+        font.load().then((loadedFont) => {
+            // Font is downloaded, add it to the document
+            document.fonts.add(loadedFont);
+            // Apply the font-loaded class to show the custom font
+            heroText1.classList.add('font-loaded');
+        }).catch((error) => {
+            console.error('Font failed to load:', error);
+            // Fallback: still try to apply after a delay if Font Loading API fails
+            setTimeout(() => {
+                heroText1.classList.add('font-loaded');
+            }, 2000);
+        });
+    } else {
+        // Fallback for browsers that don't support Font Loading API
+        setTimeout(() => {
+            heroText1.classList.add('font-loaded');
+        }, 2000);
+    }
 }
 
 // ========================================

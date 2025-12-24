@@ -71,7 +71,18 @@ body {
 
 /* Stunning gradient backgrounds */
 .gradient-bg-1 {
-    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2J2anIyYzE3Nmtrb2dnbHIwZjJvZ3lpeXl0djR3NGR0dnF1Nmo4MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78nXADhnE4BQfG4gup/giphy.gif');
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2J2anIyYzE3Nmtrb2dnbHIwZjJvZ3lpeXl0djR3NGR0dnF1Nmo4MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78nXADhnE4BQfG4gup/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gradient-bg-black {
+    background: #000000;
+}
+
+.gradient-bg-colorful {
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW4waDdiMGF4aGtjYnd0eXl3eHp6MWNtYTZ0aG81ODlpYnV3cXBqciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5gfzkhvjNxhPuUN4Ct/giphy.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -150,7 +161,7 @@ body {
 
 /* Individual Section Text Classes */
 .hero-text-1 {
-    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
     font-size: clamp(2.5rem, 10vw, 8rem);
     font-weight: 50;
     line-height: 1.1;
@@ -158,6 +169,11 @@ body {
     margin-bottom: 1rem;
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     color: #ffffff;
+    transition: font-family 0.3s ease;
+}
+
+.hero-text-1.font-loaded {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
 }
 
 .hero-text-2 {
@@ -173,10 +189,11 @@ body {
 
 .hero-text-3 {
     font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
-    font-size: clamp(3rem, 12vw, 10rem);
-    font-weight: 900;
+    font-size: clamp(2.5rem, 10vw, 8rem);
+    font-weight: 50;
     line-height: 1.1;
     letter-spacing: -0.03em;
+    
     margin-bottom: 1rem;
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     color: #ffffff;
@@ -202,6 +219,66 @@ body {
     margin-bottom: 1rem;
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     color: #ffffff;
+}
+
+.hero-text-black {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-align: center;
+    max-width: 80vw;
+}
+
+/* Black box with transparent text showing background */
+.black-box {
+    background: #000000;
+    padding: 4rem 6rem;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    min-width: 60vw;
+    width: 80vw;
+    max-width: 1200px;
+}
+
+.hero-text-gradient {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(4rem, 15vw, 12rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-image: inherit;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hero-text-gradient .text-left {
+    text-align: left;
+    display: block;
+}
+
+.hero-text-gradient .text-right {
+    text-align: right;
+    display: block;
+}
+
+/* Make text show the background behind the black box */
+.page-section[data-section="3"] .hero-text-gradient {
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW4waDdiMGF4aGtjYnd0eXl3eHp6MWNtYTZ0aG81ODlpYnV3cXBqciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5gfzkhvjNxhPuUN4Ct/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .subtitle-text {
