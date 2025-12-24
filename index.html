@@ -4,48 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Intelligent Sans - AI-designed curated fonts. Join the waitlist for exclusive access.">
-    <title>Intelligent Sans</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Font Foundry - Intelligent Sans</title>
+    <meta name="description" content="Explore our collection of stunning, AI-designed typefaces">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <main class="container">
-        <!-- Font Display Section -->
-        <section class="font-showcase">
-            <!-- Clickable Font Image -->
-            <div class="font-display" id="fontDisplay">
-                <img src="fonts/images/placeholder.svg" alt="Font Preview" id="fontImage">
-                <p class="click-hint">Click to see next font</p>
-            </div>
+    <!-- Join Beta Button - Fixed on right side -->
+    <button id="joinBeta" class="join-beta-btn">
+        <span>Join Beta</span>
+    </button>
 
-            <!-- Prompt + Download Row -->
-            <div class="prompt-row">
-                <p class="font-prompt" id="fontPrompt">"Warm, melting letterforms inspired by candlelight"</p>
-                <button class="download-btn" id="downloadBtn" title="Download Font">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                </button>
+    <!-- Download Button - Fixed on left side -->
+    <button id="downloadBtn" class="download-btn">
+        <span>Download</span>
+    </button>
+
+    <!-- Full-page sections container -->
+    <div class="scroll-container">
+
+        <!-- Section 1: Hero with gradient background -->
+        <section class="page-section" data-section="1">
+            <div class="background-layer gradient-bg-1"></div>
+            <div class="content-layer">
+                <h1 class="hero-text-1 animate-in" data-style="hero" style="text-align: left;">
+                    INTELLGENT<br>SANS
+                </h1>
             </div>
         </section>
 
-        <!-- Waitlist Section -->
-        <section class="waitlist-section">
-            <p class="waitlist-label">Get early access to AI-designed fonts</p>
-            <div class="waitlist">
-                <input type="email" placeholder="Enter your email" id="emailInput" class="email-input">
-                <button class="waitlist-btn" id="waitlistBtn">Join Waitlist</button>
+        <!-- Section 2: Bold statement with video background -->
+        <section class="page-section" data-section="2">
+            <div class="background-layer gradient-bg-2"></div>
+            <div class="content-layer">
+                <h2 class="hero-text-2 animate-slide" data-style="bold">
+                    Designed by AI,<br>Refined by Design
+                </h2>
             </div>
         </section>
-    </main>
+
+        <!-- Section 3: Artistic text with image background -->
+        <section class="page-section" data-section="3">
+            <div class="background-layer gradient-bg-3"></div>
+            <div class="content-layer">
+                <h2 class="hero-text-3 glitch-effect" data-style="artistic">
+                    Every Letter<br>Tells a Story
+                </h2>
+            </div>
+        </section>
+
+        <!-- Section 4: Dynamic presentation -->
+        <section class="page-section" data-section="4">
+            <div class="background-layer gradient-bg-4"></div>
+            <div class="content-layer">
+                <h2 class="hero-text-4 wave-effect" data-style="dynamic">
+                    Precision<br>Meets<br>Creativity
+                </h2>
+            </div>
+        </section>
+
+        <!-- Section 5: Coming soon with call to action -->
+        <section class="page-section" data-section="5">
+            <div class="background-layer gradient-bg-5"></div>
+            <div class="content-layer">
+                <h2 class="hero-text-5 fade-in" data-style="elegant">
+                    Coming Soon
+                </h2>
+            </div>
+        </section>
+
+    </div>
 
     <script src="script.js"></script>
 </body>

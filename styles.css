@@ -1,269 +1,500 @@
-/* ===== CSS Variables ===== */
-:root {
-    --bg-color: #F5F3EF;
-    --text-color: #2d2d2d;
-    --text-muted: #6b6b6b;
-    --accent-color: #1a1a1a;
-    --border-color: #d4d4d4;
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+/* ========================================
+   CUSTOM FONTS
+   ======================================== */
+@font-face {
+    font-family: 'Intelligent Sans';
+    src: url('https://raw.githubusercontent.com/ebaad11/fonts_outputs/main/lines.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
-/* ===== Reset & Base ===== */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 body {
-    font-family: var(--font-primary);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.5;
-    min-height: 100vh;
-    min-height: 100dvh;
+    font-family: 'Intelligent Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #000;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== Container ===== */
-.container {
-    min-height: 100vh;
-    min-height: 100dvh;
+/* ========================================
+   SCROLL CONTAINER & SECTIONS
+   ======================================== */
+.scroll-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.page-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 2rem 1.5rem;
-    gap: 2rem;
-}
-
-/* ===== Font Showcase ===== */
-.font-showcase {
-    /* Takes up full viewport height minus padding to center the font */
-    min-height: 80vh;
-    min-height: 80dvh;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    /* Allow it to stretch much wider like Socratica */
-    max-width: 1400px;
+    overflow: hidden;
 }
 
-/* ===== Font Display ===== */
-.font-display {
-    cursor: pointer;
+/* ========================================
+   BACKGROUND LAYERS
+   ======================================== */
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stunning gradient backgrounds */
+.gradient-bg-1 {
+    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2J2anIyYzE3Nmtrb2dnbHIwZjJvZ3lpeXl0djR3NGR0dnF1Nmo4MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78nXADhnE4BQfG4gup/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gradient-bg-2 {
+    background: linear-gradient(135deg,
+            #f093fb 0%,
+            #f5576c 50%,
+            #ffd34e 100%);
+    animation: gradientShift 12s ease infinite;
+}
+
+.gradient-bg-3 {
+    background: linear-gradient(135deg,
+            #4facfe 0%,
+            #00f2fe 50%,
+            #43e97b 100%);
+    animation: gradientShift 18s ease infinite;
+}
+
+.gradient-bg-4 {
+    background: linear-gradient(135deg,
+            #fa709a 0%,
+            #fee140 50%,
+            #30cfd0 100%);
+    animation: gradientShift 14s ease infinite;
+}
+
+.gradient-bg-5 {
+    background: linear-gradient(135deg,
+            #a8edea 0%,
+            #fed6e3 50%,
+            #d299c2 100%);
+    animation: gradientShift 16s ease infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+        background-size: 200% 200%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+        background-size: 250% 250%;
+    }
+}
+
+/* ========================================
+   CONTENT LAYERS
+   ======================================== */
+.content-layer {
+    position: relative;
+    z-index: 10;
     text-align: center;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    width: 100%;
-}
-
-.font-display img {
-    width: 100%;
-    /* Allow image to be very large */
+    padding: 2rem;
     max-width: 90vw;
-    height: auto;
-    /* Remove strict height limit to allow stretching, or make it very loose */
-    max-height: 65vh;
-    object-fit: contain;
-    transition: opacity 0.2s ease, transform 0.3s ease;
-    /* Optional: removing border radius for a sharper, cleaner look if preferred, 
-       but keeping slight one for modern feel */
-    border-radius: 0;
 }
 
-.font-display:hover img {
-    opacity: 0.95;
-    transform: scale(1.005);
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+.display-text {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
-.font-display:active img {
-    opacity: 0.85;
-    transform: scale(0.995);
+/* Individual Section Text Classes */
+.hero-text-1 {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 10vw, 8rem);
+    font-weight: 50;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
-.click-hint {
-    display: none;
-    /* Super minimal - hide the hint */
+.hero-text-2 {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
-/* ===== Prompt Row ===== */
-.prompt-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    /* Aligned to the right */
-    gap: 1rem;
-    width: 100%;
-    /* Removed max-width constraint to let it push to the edge */
-    margin-top: 2rem;
-    padding: 0;
-    /* Remove padding to align strictly with container/image edge */
+.hero-text-3 {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
-.font-prompt {
-    font-size: 1.125rem;
-    /* Switching to Serif to match the 'We host...' text in example */
-    font-family: 'Times New Roman', serif;
-    font-style: italic;
-    /* Keep italic or normal based on preference, keeping italic for 'prompt' feel */
-    color: var(--text-color);
-    text-align: right;
-    line-height: 1.4;
-    font-weight: 400;
+.hero-text-4 {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
-/* ===== Download Button (Next to Prompt) ===== */
-.download-btn {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    /* Circle shape for minimal look? Or keep rounded rect. Let's try circle */
-    background: transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    transition: all 0.2s ease;
+.hero-text-5 {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
-.download-btn:hover {
-    background: var(--text-color);
-    color: var(--bg-color);
-    border-color: var(--text-color);
-}
-
-.download-btn:active {
-    transform: scale(0.95);
-}
-
-/* ===== Waitlist Section ===== */
-.waitlist-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 400px;
-    /* Push to "second page" - full screen scroll roughly */
-    margin-top: 30vh;
-    padding-bottom: 6rem;
-}
-
-.waitlist-label {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    text-align: center;
-    font-family: 'Times New Roman', serif;
-    font-style: italic;
-}
-
-.waitlist {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-}
-
-.email-input {
-    width: 100%;
-    padding: 0.875rem 1rem;
-    font-size: 0.9375rem;
-    font-family: var(--font-primary);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    /* Slightly sharper */
-    background: transparent;
-    color: var(--text-color);
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.email-input::placeholder {
-    color: var(--text-muted);
-    opacity: 0.7;
-}
-
-.email-input:focus {
-    border-color: var(--text-color);
-}
-
-.waitlist-btn {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.8125rem;
-    font-family: var(--font-primary);
-    font-weight: 500;
-    letter-spacing: 0.05em;
+.subtitle-text {
+    font-family: 'Intelligent Sans', 'Inter', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-weight: 100;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    background: var(--text-color);
-    color: var(--bg-color);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.waitlist-btn:hover {
     opacity: 0.9;
+    margin-top: 2rem;
+    line-height: 2.5;
 }
 
-.waitlist-btn:active {
+.cta-text {
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   TEXT ANIMATIONS & EFFECTS
+   ======================================== */
+
+/* Hero animation - fade and scale in */
+.animate-in {
+    animation: heroEntry 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes heroEntry {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Slide animation */
+.animate-slide {
+    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glitch effect */
+.glitch-effect {
+    position: relative;
+    animation: glitchMain 1.5s ease-in-out forwards;
+}
+
+@keyframes glitchMain {
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+/* Wave effect */
+.wave-effect {
+    display: inline-block;
+}
+
+.wave-effect::first-line {
+    animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Fade in */
+.fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   JOIN BETA BUTTON
+   ======================================== */
+.join-beta-btn {
+    position: fixed !important;
+    right: 1.5rem !important;
+    bottom: 1.5rem !important;
+    top: unset !important;
+    z-index: 9999;
+
+    /* Styling */
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #fff;
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    /* Negative/Invert filter */
+    backdrop-filter: invert(1) blur(10px);
+    -webkit-backdrop-filter: invert(1) blur(10px);
+
+    /* Square shape */
+    border-radius: 0;
+
+    /* Transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Ensure it's on top */
+    mix-blend-mode: difference;
+}
+
+.join-beta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.join-beta-btn:active {
     transform: scale(0.98);
 }
 
-/* ===== Responsive - Tablet & Desktop ===== */
-@media (min-width: 640px) {
-    .container {
-        padding: 0 3rem;
+/* ========================================
+   DOWNLOAD BUTTON
+   ======================================== */
+.download-btn {
+    position: fixed !important;
+    left: 1.5rem !important;
+    bottom: 1.5rem !important;
+    top: unset !important;
+    z-index: 9999;
+
+    /* Styling */
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #fff;
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    /* Negative/Invert filter */
+    backdrop-filter: invert(1) blur(10px);
+    -webkit-backdrop-filter: invert(1) blur(10px);
+
+    /* Round shape */
+    border-radius: 50px;
+
+    /* Transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Ensure it's on top */
+    mix-blend-mode: difference;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .join-beta-btn {
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
     }
 
-    .font-display img {
-        /* Even wider on desktop */
-        max-width: 85vw;
-        max-height: 75vh;
+    .download-btn {
+        left: 1rem;
+        bottom: 1rem;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
     }
 
-    .font-prompt {
-        font-size: 1.375rem;
-        text-align: right;
-    }
-
-    .waitlist {
-        flex-direction: row;
-    }
-
-    .email-input {
-        flex: 1;
-    }
-
-    .waitlist-btn {
-        flex-shrink: 0;
+    .display-text {
+        letter-spacing: -0.02em;
     }
 }
 
-@media (min-width: 1024px) {
-    .container {
-        padding: 0 4rem;
+@media (max-width: 480px) {
+    .join-beta-btn {
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
     }
 
-    .font-showcase {
-        max-width: 1600px;
+    .join-beta-btn:hover {
+        transform: scale(1.05);
     }
 
-    .font-prompt {
-        font-size: 1.75rem;
+    .download-btn {
+        left: 1rem;
+        bottom: 1rem;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
     }
 
-    /*Socractica style often has huge wide text. Let's allow the image to really breathe.*/
+    .download-btn:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   SMOOTH SCROLL ENHANCEMENTS
+   ======================================== */
+.page-section.scrolled-past .background-layer {
+    transform: scale(1.1);
+}
+
+.page-section.in-view .background-layer {
+    transform: scale(1);
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.join-beta-btn:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 4px;
+    transform: scale(1);
 }

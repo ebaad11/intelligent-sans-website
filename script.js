@@ -1,146 +1,261 @@
-/**
- * Intelligent Sans - Font Display & Download System
- * 
- * To add a new font:
- * 1. Add image to fonts/images/ folder
- * 2. Add .ttf file to fonts/downloads/ folder
- * 3. Add entry to FONTS array below
- */
+// ========================================
+// SMOOTH SCROLL & SECTION TRANSITIONS
+// ========================================
 
-// Font data with prompts
-const FONTS = [
-    {
-        name: "Candle Sans",
-        prompt: "Warm, melting letterforms inspired by candlelight",
-        imagePath: "fonts/images/candle-sans.png",
-        downloadPath: "fonts/downloads/candle-sans.ttf"
-    },
-    {
-        name: "Ocean Drift",
-        prompt: "Flowing curves like waves on a calm sea",
-        imagePath: "fonts/images/ocean-drift.png",
-        downloadPath: "fonts/downloads/ocean-drift.ttf"
-    },
-    {
-        name: "Neon Midnight",
-        prompt: "Electric glowing letters from a 1980s arcade",
-        imagePath: "fonts/images/neon-midnight.png",
-        downloadPath: "fonts/downloads/neon-midnight.ttf"
-    },
-    {
-        name: "Botanical Script",
-        prompt: "Organic, vine-like characters from a secret garden",
-        imagePath: "fonts/images/botanical-script.png",
-        downloadPath: "fonts/downloads/botanical-script.ttf"
-    },
-    {
-        name: "Pixel Nostalgia",
-        prompt: "Crisp 8-bit letters from vintage video games",
-        imagePath: "fonts/images/pixel-nostalgia.png",
-        downloadPath: "fonts/downloads/pixel-nostalgia.ttf"
-    },
-    {
-        name: "Marble Elegance",
-        prompt: "Chiseled letters with the texture of Italian marble",
-        imagePath: "fonts/images/marble-elegance.png",
-        downloadPath: "fonts/downloads/marble-elegance.ttf"
-    }
-];
-
-// State
-let currentFontIndex = 0;
-
-// DOM Elements
-let fontDisplay, fontImage, fontPrompt, downloadBtn, emailInput, waitlistBtn;
+let currentSection = 0;
+let sections;
+let scrollContainer;
 
 // Initialize
-function init() {
-    // Cache DOM elements
-    fontDisplay = document.getElementById('fontDisplay');
-    fontImage = document.getElementById('fontImage');
-    fontPrompt = document.getElementById('fontPrompt');
-    downloadBtn = document.getElementById('downloadBtn');
-    emailInput = document.getElementById('emailInput');
-    waitlistBtn = document.getElementById('waitlistBtn');
+document.addEventListener('DOMContentLoaded', () => {
+    sections = document.querySelectorAll('.page-section');
+    scrollContainer = document.querySelector('.scroll-container');
+    
+    initScrollBehavior();
+    initJoinBetaButton();
+    initDownloadButton();
+    initIntersectionObserver();
+});
 
-    // Display first font
-    updateFontDisplay();
+// ========================================
+// SCROLL BEHAVIOR
+// ========================================
 
-    // Click to cycle fonts
-    fontDisplay.addEventListener('click', nextFont);
+function initScrollBehavior() {
+    let isScrolling = false;
+    let scrollTimeout;
 
-    // Download button
-    downloadBtn.addEventListener('click', downloadCurrentFont);
+    // Track current section
+    scrollContainer.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
 
-    // Waitlist (basic functionality)
-    waitlistBtn.addEventListener('click', handleWaitlist);
-    emailInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') handleWaitlist();
+        scrollTimeout = setTimeout(() => {
+            updateCurrentSection();
+        }, 100);
+    }, { passive: true });
+
+    // Optional: Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+            e.preventDefault();
+            scrollToNextSection();
+        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+            e.preventDefault();
+            scrollToPreviousSection();
+        }
+    });
+
+    // Optional: Touch swipe support for mobile
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const swipeDistance = touchStartY - touchEndY;
+
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+            if (swipeDistance > 0) {
+                // Swipe up
+                scrollToNextSection();
+            } else {
+                // Swipe down
+                scrollToPreviousSection();
+            }
+        }
+    }
+}
+
+function updateCurrentSection() {
+    const scrollPosition = scrollContainer.scrollTop + window.innerHeight / 2;
+
+    sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSection = index;
+            section.classList.add('in-view');
+            section.classList.remove('scrolled-past');
+        } else if (scrollPosition >= sectionBottom) {
+            section.classList.add('scrolled-past');
+            section.classList.remove('in-view');
+        } else {
+            section.classList.remove('in-view', 'scrolled-past');
+        }
+    });
+
+}
+
+function scrollToNextSection() {
+    if (currentSection < sections.length - 1) {
+        sections[currentSection + 1].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        currentSection++;
+    }
+}
+
+function scrollToPreviousSection() {
+    if (currentSection > 0) {
+        sections[currentSection - 1].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        currentSection--;
+    }
+}
+
+// ========================================
+// JOIN BETA BUTTON
+// ========================================
+
+function initJoinBetaButton() {
+    const joinBetaBtn = document.getElementById('joinBeta');
+
+    joinBetaBtn.addEventListener('click', () => {
+        // Add click animation
+        joinBetaBtn.style.transform = 'scale(0.95)';
+
+        setTimeout(() => {
+            joinBetaBtn.style.transform = 'scale(1)';
+        }, 150);
+
+        // Placeholder for beta signup action
+        handleBetaSignup();
     });
 }
 
-// Update the display with current font
-function updateFontDisplay() {
-    const font = FONTS[currentFontIndex];
-    if (!font) return;
+function handleBetaSignup() {
+    // TODO: Add your beta signup logic here
+    // For now, just show an alert
+    alert('Beta signup coming soon! 🚀');
 
-    fontImage.src = font.imagePath;
-    fontImage.alt = `${font.name} Font Preview`;
-    fontPrompt.textContent = `"${font.prompt}"`;
+    // Example: You could open a modal, redirect to a form, etc.
+    // window.location.href = '/beta-signup';
 }
 
-// Cycle to next font
-function nextFont() {
-    currentFontIndex = (currentFontIndex + 1) % FONTS.length;
+// ========================================
+// DOWNLOAD BUTTON
+// ========================================
 
-    // Subtle animation
-    fontImage.style.opacity = '0';
-    fontImage.style.transform = 'scale(0.98)';
+function initDownloadButton() {
+    const downloadBtn = document.getElementById('downloadBtn');
 
-    setTimeout(() => {
-        updateFontDisplay();
-        fontImage.style.opacity = '1';
-        fontImage.style.transform = 'scale(1)';
-    }, 150);
+    downloadBtn.addEventListener('click', () => {
+        // Add click animation
+        downloadBtn.style.transform = 'scale(0.95)';
+
+        setTimeout(() => {
+            downloadBtn.style.transform = 'scale(1)';
+        }, 150);
+
+        // Placeholder for download action
+        handleDownload();
+    });
 }
 
-// Download current font's TTF file
-function downloadCurrentFont() {
-    const font = FONTS[currentFontIndex];
-    if (!font) return;
-
+function handleDownload() {
+    // Font URL from GitHub
+    const fontUrl = 'https://raw.githubusercontent.com/ebaad11/fonts_outputs/main/lines.ttf';
+    const fileName = 'intelligent-sans-lines.ttf';
+    
+    // Create a temporary link element to trigger download
     const link = document.createElement('a');
-    link.href = font.downloadPath;
-    link.download = `${font.name.replace(/\s+/g, '-').toLowerCase()}.ttf`;
+    link.href = fontUrl;
+    link.download = fileName;
+    link.target = '_blank';
+    
+    // Append to body, click, and remove
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 }
 
-// Handle waitlist signup
-function handleWaitlist() {
-    const email = emailInput.value.trim();
+// ========================================
+// INTERSECTION OBSERVER FOR ANIMATIONS
+// ========================================
 
-    if (!email) {
-        alert('Please enter your email address.');
-        return;
-    }
+function initIntersectionObserver() {
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px'
+    };
 
-    if (!isValidEmail(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Trigger animations when section comes into view
+                const textElements = entry.target.querySelectorAll('.display-text');
+                textElements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }
+        });
+    }, observerOptions);
 
-    // TODO: Connect to your backend/email service
-    // For now, just show confirmation
-    alert(`Thanks! ${email} has been added to the waitlist.`);
-    emailInput.value = '';
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 }
 
-// Email validation
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+// ========================================
+// PARALLAX EFFECT (OPTIONAL ENHANCEMENT)
+// ========================================
+
+function initParallax() {
+    scrollContainer.addEventListener('scroll', () => {
+        const scrolled = scrollContainer.scrollTop;
+
+        sections.forEach((section, index) => {
+            const backgroundLayer = section.querySelector('.background-layer');
+            const speed = 0.5; // Adjust for parallax intensity
+
+            const sectionTop = section.offsetTop;
+            const offset = (scrolled - sectionTop) * speed;
+
+            if (backgroundLayer && Math.abs(scrolled - sectionTop) < window.innerHeight) {
+                backgroundLayer.style.transform = `translateY(${offset}px)`;
+            }
+        });
+    }, { passive: true });
 }
 
-// Start
-document.addEventListener('DOMContentLoaded', init);
+// Uncomment to enable parallax effect
+// initParallax();
+
+// ========================================
+// UTILITY FUNCTIONS
+// ========================================
+
+// Check if user prefers reduced motion
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+// Apply reduced motion if user prefers
+if (prefersReducedMotion()) {
+    document.documentElement.style.scrollBehavior = 'auto';
+}
+
+// ========================================
+// DEBUGGING (Remove in production)
+// ========================================
+
+// Log current section for debugging
+// Uncomment for debugging:
+// scrollContainer?.addEventListener('scroll', () => {
+//     console.log('Current section:', currentSection);
+// }, { passive: true });
