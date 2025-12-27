@@ -516,8 +516,8 @@ function positionPopup(event, popup) {
 }
 
 function downloadFont(fontInfo) {
-    // Use local font file
-    const fontUrl = `fonts/${fontInfo.file}`;
+    // Use absolute URL for deployed site
+    const fontUrl = `${window.location.origin}/fonts/${fontInfo.file}`;
     const fileName = `intelligent-sans-${fontInfo.name.toLowerCase()}.ttf`;
 
     // Create temporary link element
