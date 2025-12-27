@@ -96,7 +96,7 @@ const FONT_CONFIGURATION = {
       section: 4,
       position: "bottom-left",
       text: "Rose Petals",
-      fontFile: "rose petals.ttf",
+      fontFile: "Rose Petals.ttf",
       fontFamily: "RosePetals",
       color: "#a25a72",
       textShadow: "0 10px 30px rgba(255, 105, 180, 0.4)",
