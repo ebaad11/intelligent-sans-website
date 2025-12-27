@@ -188,10 +188,10 @@ function updateCurrentSection() {
             section.classList.add('in-view');
             section.classList.remove('scrolled-past');
 
-            // Show download button only on sections 1-2 (index 0, 1)
-            // Hide on sections 3-6 (font showcase + credits)
+            // Show download button only on section 1 (index 0)
+            // Hide on all other sections
             if (downloadBtn) {
-                if (index <= 1) {
+                if (index === 0) {
                     downloadBtn.classList.remove('hidden');
                 } else {
                     downloadBtn.classList.add('hidden');
