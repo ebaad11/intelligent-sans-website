@@ -18,7 +18,7 @@ const FONT_CONFIGURATION = {
       id: "section3-top-left",
       section: 3,
       position: "top-left",
-      text: "Fire",
+      text: "Flames",
       fontFile: "fire and flames.ttf",
       fontFamily: "FireAndFlames",
       color: "#e09461ff",
@@ -97,7 +97,7 @@ const FONT_CONFIGURATION = {
       position: "bottom-left",
       text: "Rose Petals",
       fontFile: "Rose Petals.ttf",
-      fontFamily: "RosePetals",
+      fontFamily: "Rose petals",
       color: "#a25a72",
       textShadow: "0 10px 30px rgba(255, 105, 180, 0.4)",
       fontSize: "8rem"
