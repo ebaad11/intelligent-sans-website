@@ -426,7 +426,7 @@ body {
 }
 
 .page-section[data-section="3"] .express-bottom-left {
-    bottom: 20%;
+    bottom: 12%;
     left: 8%;
     font-size: clamp(2.8rem, 7vw, 5.5rem);
     transform: rotate(2deg);
