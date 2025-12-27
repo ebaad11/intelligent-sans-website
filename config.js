@@ -62,7 +62,7 @@ const FONT_CONFIGURATION = {
       id: "section4-center",
       section: 4,
       position: "center",
-      text: "Made of",
+      text: "STUFF",
       fontFile: "DNA.ttf",
       fontFamily: "DNA",
       color: "#a2a1ddff",
