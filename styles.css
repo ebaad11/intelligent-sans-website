@@ -3,7 +3,159 @@
    ======================================== */
 @font-face {
     font-family: 'Intelligent Sans';
-    src: url('https://raw.githubusercontent.com/ebaad11/fonts_outputs/main/lines.ttf') format('truetype');
+    src: url('fonts/lines.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rust';
+    src: url('fonts/rust.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fire';
+    src: url('fonts/fire.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glow';
+    src: url('fonts/glow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SprayPaint';
+    src: url('fonts/spray_paint.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Blood';
+    src: url('fonts/blood.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'WaterDroplets';
+    src: url('fonts/water_droplets.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graffiti';
+    src: url('fonts/grafiti.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DNA';
+    src: url('fonts/DNA.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glass';
+    src: url('fonts/glass.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DiamondPlate';
+    src: url('fonts/diamond plate.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FoldedPaper';
+    src: url('fonts/folded paper.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vectors';
+    src: url('fonts/vectors.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outline';
+    src: url('fonts/outline.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Knitted';
+    src: url('fonts/knitted.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gold';
+    src: url('fonts/Gold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Wood';
+    src: url('fonts/solid_wood.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Metal';
+    src: url('fonts/solid_metal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Concrete';
+    src: url('fonts/solid_concrete.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fabric';
+    src: url('fonts/knitted.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -18,7 +170,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -71,14 +224,10 @@ body {
 
 /* Stunning gradient backgrounds */
 .gradient-bg-1 {
-    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2J2anIyYzE3Nmtrb2dnbHIwZjJvZ3lpeXl0djR3NGR0dnF1Nmo4MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78nXADhnE4BQfG4gup/giphy.gif');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2J2anIyYzE3Nmtrb2dnbHIwZjJvZ3lpeXl0djR3NGR0dnF1Nmo4MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/78nXADhnE4BQfG4gup/giphy.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.gradient-bg-black {
-    background: #000000;
 }
 
 .gradient-bg-colorful {
@@ -88,50 +237,8 @@ body {
     background-repeat: no-repeat;
 }
 
-.gradient-bg-2 {
-    background: linear-gradient(135deg,
-            #f093fb 0%,
-            #f5576c 50%,
-            #ffd34e 100%);
-    animation: gradientShift 12s ease infinite;
-}
-
 .gradient-bg-3 {
-    background: linear-gradient(135deg,
-            #4facfe 0%,
-            #00f2fe 50%,
-            #43e97b 100%);
-    animation: gradientShift 18s ease infinite;
-}
-
-.gradient-bg-4 {
-    background: linear-gradient(135deg,
-            #fa709a 0%,
-            #fee140 50%,
-            #30cfd0 100%);
-    animation: gradientShift 14s ease infinite;
-}
-
-.gradient-bg-5 {
-    background: linear-gradient(135deg,
-            #a8edea 0%,
-            #fed6e3 50%,
-            #d299c2 100%);
-    animation: gradientShift 16s ease infinite;
-}
-
-@keyframes gradientShift {
-
-    0%,
-    100% {
-        background-position: 0% 50%;
-        background-size: 200% 200%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-        background-size: 250% 250%;
-    }
+    background: #000000;
 }
 
 /* ========================================
@@ -176,58 +283,20 @@ body {
     font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
 }
 
-.hero-text-2 {
-    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
-    font-size: clamp(3rem, 12vw, 10rem);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 1rem;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+.hero-subtitle {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 0.05em;
     color: #ffffff;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    transition: font-family 0.3s ease;
+    white-space: nowrap;
 }
 
-.hero-text-3 {
+.hero-subtitle.font-loaded {
     font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
-    font-size: clamp(2.5rem, 10vw, 8rem);
-    font-weight: 50;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    
-    margin-bottom: 1rem;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-}
-
-.hero-text-4 {
-    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
-    font-size: clamp(3rem, 12vw, 10rem);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 1rem;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-}
-
-.hero-text-5 {
-    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
-    font-size: clamp(3rem, 12vw, 10rem);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 1rem;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-}
-
-.hero-text-black {
-    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
-    margin-bottom: 1rem;
     color: #ffffff;
     text-align: center;
     max-width: 80vw;
@@ -274,31 +343,306 @@ body {
 }
 
 /* Make text show the background behind the black box */
-.page-section[data-section="3"] .hero-text-gradient {
+.page-section[data-section="2"] .hero-text-gradient {
     background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW4waDdiMGF4aGtjYnd0eXl3eHp6MWNtYTZ0aG81ODlpYnV3cXBqciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5gfzkhvjNxhPuUN4Ct/giphy.gif');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-.subtitle-text {
-    font-family: 'Intelligent Sans', 'Inter', sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
-    font-weight: 100;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.9;
-    margin-top: 2rem;
-    line-height: 2.5;
+.hero-text-2 {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
-.cta-text {
-    font-size: clamp(1rem, 2.5vw, 1.8rem);
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    opacity: 0.85;
-    margin-top: 2rem;
+.hero-text-3 {
+    font-family: 'Rust', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(4rem, 16vw, 14rem);
+    font-weight: normal;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+    text-shadow: 0 15px 50px rgba(183, 65, 14, 0.5);
+    color: #b7410e;
 }
+
+/* Express Canvas Container */
+.express-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Base Express Text Style */
+.express-item {
+    position: absolute;
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: normal;
+    line-height: 1;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.express-item:hover {
+    opacity: 1;
+}
+
+/* Position Classes */
+.express-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(4rem, 14vw, 12rem);
+    z-index: 10;
+}
+
+.express-center:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* --- Section 3 (Textures) Variations --- */
+.page-section[data-section="3"] .express-top-left {
+    top: 8%;
+    left: 4%;
+    font-size: clamp(3rem, 8vw, 6rem);
+    transform: rotate(-5deg);
+}
+
+.page-section[data-section="3"] .express-top-right {
+    top: 15%;
+    right: 6%;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    transform: rotate(3deg);
+}
+
+.page-section[data-section="3"] .express-bottom-left {
+    bottom: 20%;
+    left: 8%;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    transform: rotate(2deg);
+}
+
+.page-section[data-section="3"] .express-bottom-right {
+    bottom: 10%;
+    right: 12%;
+    font-size: clamp(3.2rem, 9vw, 6.5rem);
+    transform: rotate(-3deg);
+}
+
+/* --- Section 4 (Shapes) Variations --- */
+.page-section[data-section="4"] .express-top-left {
+    top: 12%;
+    left: 8%;
+    font-size: clamp(3.2rem, 8.5vw, 6.2rem);
+    transform: rotate(4deg);
+}
+
+.page-section[data-section="4"] .express-top-right {
+    top: 8%;
+    right: 5%;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    transform: rotate(-6deg);
+}
+
+.page-section[data-section="4"] .express-bottom-left {
+    bottom: 8%;
+    left: 5%;
+    font-size: clamp(2.9rem, 7.5vw, 5.8rem);
+    transform: rotate(-3deg);
+}
+
+.page-section[data-section="4"] .express-bottom-right {
+    bottom: 18%;
+    right: 8%;
+    font-size: clamp(3.1rem, 8vw, 6rem);
+    transform: rotate(5deg);
+}
+
+/* --- Section 5 (Materials) Variations --- */
+.page-section[data-section="5"] .express-top-left {
+    top: 6%;
+    left: 12%;
+    font-size: clamp(2.8rem, 7.5vw, 5.8rem);
+    transform: rotate(-8deg);
+}
+
+.page-section[data-section="5"] .express-top-right {
+    top: 18%;
+    right: 4%;
+    font-size: clamp(3.3rem, 8.5vw, 6.5rem);
+    transform: rotate(2deg);
+}
+
+.page-section[data-section="5"] .express-bottom-left {
+    bottom: 15%;
+    left: 6%;
+    font-size: clamp(3.1rem, 8vw, 6.2rem);
+    transform: rotate(7deg);
+}
+
+.page-section[data-section="5"] .express-bottom-right {
+    bottom: 8%;
+    right: 15%;
+    font-size: clamp(2.9rem, 7.8vw, 5.9rem);
+    transform: rotate(-4deg);
+}
+
+/* Hover effects that preserve rotations */
+.page-section[data-section="3"] .express-top-left:hover {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.page-section[data-section="3"] .express-top-right:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+.page-section[data-section="3"] .express-bottom-left:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.page-section[data-section="3"] .express-bottom-right:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+.page-section[data-section="4"] .express-top-left:hover {
+    transform: rotate(4deg) scale(1.05);
+}
+
+.page-section[data-section="4"] .express-top-right:hover {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.page-section[data-section="4"] .express-bottom-left:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+.page-section[data-section="4"] .express-bottom-right:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.page-section[data-section="5"] .express-top-left:hover {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+.page-section[data-section="5"] .express-top-right:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.page-section[data-section="5"] .express-bottom-left:hover {
+    transform: rotate(7deg) scale(1.05);
+}
+
+.page-section[data-section="5"] .express-bottom-right:hover {
+    transform: rotate(-4deg) scale(1.05);
+}
+
+/* Font Styles */
+.font-rust {
+    font-family: 'Rust', serif;
+    color: #b7410e;
+    text-shadow: 0 10px 30px rgba(183, 65, 14, 0.4);
+}
+
+.font-fire {
+    font-family: 'Fire', serif;
+    color: #ff4500;
+    text-shadow: 0 10px 30px rgba(255, 69, 0, 0.5);
+}
+
+.font-glow {
+    font-family: 'Glow', serif;
+    color: #00ffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+.font-spray {
+    font-family: 'SprayPaint', serif;
+    color: #ff1493;
+    text-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+}
+
+.font-blood {
+    font-family: 'Blood', serif;
+    color: #8b0000;
+    text-shadow: 0 10px 30px rgba(139, 0, 0, 0.5);
+}
+
+
+
+/* Font Styles for Shapes */
+.font-dna {
+    font-family: 'DNA', serif;
+    color: #9370db;
+    text-shadow: 0 10px 30px rgba(147, 112, 219, 0.5);
+}
+
+.font-glass {
+    font-family: 'Glass', serif;
+    color: #add8e6;
+    text-shadow: 0 0 25px rgba(173, 216, 230, 0.6);
+}
+
+.font-diamond {
+    font-family: 'DiamondPlate', serif;
+    color: #c0c0c0;
+    text-shadow: 0 10px 30px rgba(192, 192, 192, 0.5);
+}
+
+.font-folded {
+    font-family: 'FoldedPaper', serif;
+    color: #f5deb3;
+    text-shadow: 0 10px 30px rgba(245, 222, 179, 0.4);
+}
+
+.font-vectors {
+    font-family: 'Vectors', serif;
+    color: #ff6347;
+    text-shadow: 0 10px 30px rgba(255, 99, 71, 0.5);
+}
+
+
+/* Font Styles for Materials */
+.font-gold {
+    font-family: 'Gold', serif;
+    color: #ffd700;
+    text-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
+}
+
+.font-wood {
+    font-family: 'Wood', serif;
+    color: #8b4513;
+    text-shadow: 0 10px 30px rgba(139, 69, 19, 0.5);
+}
+
+.font-metal {
+    font-family: 'Metal', serif;
+    color: #c0c0c0;
+    text-shadow: 0 10px 40px rgba(192, 192, 192, 0.5);
+}
+
+.font-concrete {
+    font-family: 'Concrete', serif;
+    color: #808080;
+    text-shadow: 0 10px 30px rgba(128, 128, 128, 0.5);
+}
+
+.font-fabric {
+    font-family: 'Fabric', serif;
+    color: #db7093;
+    text-shadow: 0 10px 30px rgba(219, 112, 147, 0.5);
+}
+
+
 
 /* ========================================
    TEXT ANIMATIONS & EFFECTS
@@ -483,6 +827,12 @@ body {
     mix-blend-mode: difference;
 }
 
+.download-btn.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
 .download-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 20px 60px rgba(255, 255, 255, 0.3);
@@ -574,4 +924,71 @@ body {
     outline: 3px solid rgba(255, 255, 255, 0.8);
     outline-offset: 4px;
     transform: scale(1);
+}
+
+/* ========================================
+   FONT DOWNLOAD POPUP
+   ======================================== */
+.font-download-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+
+    /* Match download button styling */
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #fff;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    /* CRITICAL: Negative filter effect */
+    backdrop-filter: invert(1) blur(10px);
+    -webkit-backdrop-filter: invert(1) blur(10px);
+    mix-blend-mode: difference;
+
+    border-radius: 8px;
+
+    /* Visibility control */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.font-download-popup.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.font-download-popup:hover {
+    cursor: pointer;
+    border-color: rgba(255, 255, 255, 1);
+    transform: scale(1.03);
+}
+
+/* Make font items clickable */
+.express-item {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* ========================================
+   CREDITS SECTION
+   ======================================== */
+.credits-text {
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    opacity: 0.7;
+    text-align: center;
+    margin: 0;
 }

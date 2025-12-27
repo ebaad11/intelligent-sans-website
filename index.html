@@ -35,21 +35,14 @@
                 <h1 class="hero-text-1 animate-in" data-style="hero" style="text-align: left;">
                     INTELLGENT<br>SANS
                 </h1>
-            </div>
-        </section>
-
-        <!-- Section 2: Pitch black description -->
-        <section class="page-section" data-section="2">
-            <div class="background-layer gradient-bg-black"></div>
-            <div class="content-layer">
-                <h2 class="hero-text-black fade-in">
+                <p class="hero-subtitle animate-in" style="text-align: left;">
                     A human & AI typeface collaboration
-                </h2>
+                </p>
             </div>
         </section>
 
-        <!-- Section 3: Gradient box with transparent text -->
-        <section class="page-section" data-section="3">
+        <!-- Section 2: Gradient box with transparent text
+        <section class="page-section" data-section="2">
             <div class="background-layer gradient-bg-colorful"></div>
             <div class="content-layer">
                 <div class="black-box">
@@ -59,40 +52,107 @@
                     </h2>
                 </div>
             </div>
+        </section> -->
+
+        <!-- Section 3: Artistic text with rust font -->
+        <section class="page-section" data-section="3">
+            <div class="background-layer gradient-bg-3"></div>
+
+            <!-- Express Canvas with multiple positioned items -->
+            <div class="express-canvas">
+                <!-- Center - Rust (main) -->
+                <div class="express-item express-center font-rust" data-section="3" data-position="center">Textures
+                </div>
+
+                <!-- Top Left - Fire -->
+                <div class="express-item express-top-left font-fire" data-section="3" data-position="top-left">Textures
+                </div>
+
+                <!-- Top Right - Glow -->
+                <div class="express-item express-top-right font-glow" data-section="3" data-position="top-right">
+                    Textures</div>
+
+                <!-- Bottom Left - Spray Paint -->
+                <div class="express-item express-bottom-left font-spray" data-section="3" data-position="bottom-left">
+                    Textures</div>
+
+                <!-- Bottom Right - Blood -->
+                <div class="express-item express-bottom-right font-blood" data-section="3" data-position="bottom-right">
+                    Textures</div>
+            </div>
         </section>
 
-        <!-- Section 4: Artistic text with image background -->
+        <!-- Section 4: Shapes with different positions -->
         <section class="page-section" data-section="4">
             <div class="background-layer gradient-bg-3"></div>
-            <div class="content-layer">
-                <h2 class="hero-text-3 glitch-effect" data-style="artistic">
-                    Where Algorithms<br>Dream in Curves<br>& Humans Shape<br>the Soul
-                </h2>
+
+            <!-- Shapes Canvas with different positioned items -->
+            <div class="express-canvas">
+                <!-- Center - DNA (main) -->
+                <div class="express-item express-center font-dna" data-section="4" data-position="center">Shapes</div>
+
+                <!-- Top Left - Glass -->
+                <div class="express-item express-top-left font-glass" data-section="4" data-position="top-left">Shapes
+                </div>
+
+                <!-- Top Right - Diamond Plate -->
+                <div class="express-item express-top-right font-diamond" data-section="4" data-position="top-right">
+                    Shapes</div>
+
+                <!-- Bottom Left - Folded Paper -->
+                <div class="express-item express-bottom-left font-folded" data-section="4" data-position="bottom-left">
+                    Shapes</div>
+
+                <!-- Bottom Right - Vectors -->
+                <div class="express-item express-bottom-right font-vectors" data-section="4"
+                    data-position="bottom-right">Shapes</div>
             </div>
         </section>
 
-        <!-- Section 5: Dynamic presentation -->
+        <!-- Section 5: Materials with different positions -->
         <section class="page-section" data-section="5">
-            <div class="background-layer gradient-bg-4"></div>
-            <div class="content-layer">
-                <h2 class="hero-text-4 wave-effect" data-style="dynamic">
-                    Precision<br>Meets<br>Creativity
-                </h2>
+            <div class="background-layer gradient-bg-3"></div>
+
+            <!-- Materials Canvas -->
+            <div class="express-canvas">
+                <!-- Center - Gold (main) -->
+                <div class="express-item express-center font-gold" data-section="5" data-position="center">Materials
+                </div>
+
+                <!-- Top Left - Wood -->
+                <div class="express-item express-top-left font-wood" data-section="5" data-position="top-left">Materials
+                </div>
+
+                <!-- Top Right - Metal -->
+                <div class="express-item express-top-right font-metal" data-section="5" data-position="top-right">
+                    Materials</div>
+
+                <!-- Bottom Left - Concrete -->
+                <div class="express-item express-bottom-left font-concrete" data-section="5"
+                    data-position="bottom-left">Materials</div>
+
+                <!-- Bottom Right - Fabric -->
+                <div class="express-item express-bottom-right font-fabric" data-section="5"
+                    data-position="bottom-right">Materials</div>
             </div>
         </section>
 
-        <!-- Section 6: Coming soon with call to action -->
+        <!-- Section 6: Credits -->
         <section class="page-section" data-section="6">
-            <div class="background-layer gradient-bg-5"></div>
+            <div class="background-layer gradient-bg-3"></div>
             <div class="content-layer">
-                <h2 class="hero-text-5 fade-in" data-style="elegant">
-                    Coming Soon
-                </h2>
+                <h2 class="credits-text">A <span id="rotatingText">Zhavia</span> Labs Project</h2>
             </div>
         </section>
 
     </div>
 
+    <!-- Font Download Popup -->
+    <div id="fontDownloadPopup" class="font-download-popup">
+        <span id="popupText">Download Font</span>
+    </div>
+
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 
