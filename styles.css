@@ -277,6 +277,7 @@ body {
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     color: #ffffff;
     transition: font-family 0.3s ease;
+    text-align: left;
 }
 
 .hero-text-1.font-loaded {
@@ -293,13 +294,12 @@ body {
     margin-top: 0.5rem;
     transition: font-family 0.3s ease;
     white-space: nowrap;
+    text-align: left;
 }
 
 .hero-subtitle.font-loaded {
     font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
     color: #ffffff;
-    text-align: center;
-    max-width: 80vw;
 }
 
 /* Black box with transparent text showing background */
@@ -846,7 +846,20 @@ body {
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
+
+/* Tablet styles */
 @media (max-width: 768px) {
+    /* Buttons - fix visibility with solid background */
+    .join-beta-btn,
+    .download-btn {
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        mix-blend-mode: normal;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        color: #ffffff;
+    }
+
     .join-beta-btn {
         right: 1rem;
         bottom: 1rem;
@@ -864,29 +877,190 @@ body {
     .display-text {
         letter-spacing: -0.02em;
     }
+
+    /* Hero section - left aligned */
+    .hero-text-1 {
+        text-align: left !important;
+        font-size: clamp(2rem, 12vw, 5rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        text-align: left !important;
+        white-space: normal;
+        font-size: clamp(0.9rem, 3vw, 1.5rem);
+        margin-top: 0;
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .content-layer {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    /* Express canvas - artistic vertical layout */
+    .express-canvas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 2rem 1rem;
+    }
+
+    /* Reset base positioning for mobile */
+    .express-item {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        text-align: center;
+    }
+
+    /* Center item - largest, straight */
+    .express-center {
+        font-size: clamp(4rem, 16vw, 8rem) !important;
+        transform: none !important;
+        order: -1;
+    }
+
+    /* Artistic positioning for corner items on mobile */
+    /* Top-left items: tilted left, shifted left */
+    .express-top-left {
+        transform: rotate(-4deg) translateX(-8%) !important;
+        font-size: clamp(2.2rem, 9vw, 4rem) !important;
+    }
+
+    /* Top-right items: tilted right, shifted right */
+    .express-top-right {
+        transform: rotate(5deg) translateX(10%) !important;
+        font-size: clamp(2.5rem, 10vw, 4.5rem) !important;
+    }
+
+    /* Bottom-left items: tilted, shifted left */
+    .express-bottom-left {
+        transform: rotate(3deg) translateX(-12%) !important;
+        font-size: clamp(2rem, 8vw, 3.5rem) !important;
+    }
+
+    /* Bottom-right items: tilted right, shifted right */
+    .express-bottom-right {
+        transform: rotate(-6deg) translateX(6%) !important;
+        font-size: clamp(2.3rem, 9.5vw, 4.2rem) !important;
+    }
+
+    /* Hover effects on mobile - subtle scale */
+    .express-item:hover {
+        opacity: 1;
+    }
+
+    /* Credits section */
+    .credits-text {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        padding: 0 1rem;
+    }
 }
 
+/* Mobile styles */
 @media (max-width: 480px) {
+    /* Buttons - smaller on mobile */
     .join-beta-btn {
-        right: 1rem;
-        bottom: 1rem;
-        padding: 0.6rem 0.8rem;
-        font-size: 0.8rem;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        padding: 0.5rem 0.7rem;
+        font-size: 0.7rem;
     }
 
     .join-beta-btn:hover {
-        transform: scale(1.05);
+        transform: none;
     }
 
     .download-btn {
-        left: 1rem;
-        bottom: 1rem;
-        padding: 0.6rem 0.8rem;
-        font-size: 0.8rem;
+        left: 0.75rem;
+        bottom: 0.75rem;
+        padding: 0.5rem 0.7rem;
+        font-size: 0.7rem;
     }
 
     .download-btn:hover {
-        transform: scale(1.05);
+        transform: none;
+    }
+
+    /* Hero section - left aligned */
+    .hero-text-1 {
+        font-size: clamp(1.8rem, 14vw, 3.5rem) !important;
+        line-height: 1.2;
+        text-align: left !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.75rem, 3.5vw, 1rem) !important;
+        line-height: 1.4;
+        text-align: left !important;
+        margin-top: 0;
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .content-layer {
+        padding: 1rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        align-items: flex-start;
+    }
+
+    /* Express items - artistic layout on small mobile */
+    .express-canvas {
+        gap: 0.5rem;
+        padding: 1rem 0.5rem;
+    }
+
+    /* Center item - prominent */
+    .express-center {
+        font-size: clamp(3rem, 15vw, 5rem) !important;
+        transform: none !important;
+    }
+
+    /* Artistic variance for small screens */
+    .express-top-left {
+        transform: rotate(-5deg) translateX(-6%) !important;
+        font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    }
+
+    .express-top-right {
+        transform: rotate(6deg) translateX(8%) !important;
+        font-size: clamp(2rem, 9vw, 3.5rem) !important;
+    }
+
+    .express-bottom-left {
+        transform: rotate(4deg) translateX(-10%) !important;
+        font-size: clamp(1.6rem, 7vw, 2.8rem) !important;
+    }
+
+    .express-bottom-right {
+        transform: rotate(-7deg) translateX(5%) !important;
+        font-size: clamp(1.9rem, 8.5vw, 3.2rem) !important;
+    }
+
+    /* Credits */
+    .credits-text {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    /* Font download popup */
+    .font-download-popup {
+        font-size: 0.75rem;
+        padding: 0.6rem 0.8rem;
     }
 }
 
