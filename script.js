@@ -13,6 +13,7 @@ let fontConfig = {
     'font-glow': { file: 'glow.ttf', name: 'Glow' },
     'font-spray': { file: 'spray_paint.ttf', name: 'SprayPaint' },
     'font-blood': { file: 'blood.ttf', name: 'Blood' },
+    'font-ice': { file: 'ice_ice_baby.ttf', name: 'IceIceBaby' },
     'font-dna': { file: 'DNA.ttf', name: 'DNA' },
     'font-glass': { file: 'glass.ttf', name: 'Glass' },
     'font-diamond': { file: 'diamond plate.ttf', name: 'DiamondPlate' },

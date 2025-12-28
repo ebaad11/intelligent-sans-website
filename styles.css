@@ -585,6 +585,12 @@ body {
     text-shadow: 0 10px 30px rgba(139, 0, 0, 0.5);
 }
 
+.font-ice {
+    font-family: 'IceIceBaby', serif;
+    color: #b0e0e6;
+    text-shadow: 0 10px 40px rgba(176, 224, 230, 0.5);
+}
+
 
 
 /* Font Styles for Shapes */
