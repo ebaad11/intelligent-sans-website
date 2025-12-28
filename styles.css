@@ -439,19 +439,19 @@ body {
     transform: rotate(-3deg);
 }
 
-/* --- Section 4 (Shapes) Variations --- */
+/* --- Section 4 (Patterns) Variations --- */
 .page-section[data-section="4"] .express-top-left {
-    top: 12%;
-    left: 8%;
-    font-size: clamp(3.2rem, 8.5vw, 6.2rem);
-    transform: rotate(4deg);
+    top: 5%;
+    left: 3%;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    transform: rotate(-8deg);
 }
 
 .page-section[data-section="4"] .express-top-right {
-    top: 8%;
-    right: 5%;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    transform: rotate(-6deg);
+    top: 5%;
+    right: 3%;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    transform: rotate(4deg);
 }
 
 .page-section[data-section="4"] .express-bottom-left {

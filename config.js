@@ -53,7 +53,7 @@ const FONT_CONFIGURATION = {
       position: "bottom-right",
       text: "ICE",
       fontFile: "ice_ice_baby.ttf",
-      fontFamily: "Ice",
+      fontFamily: "IceIceBaby",
       color: "#b0e0e6",
       textShadow: "0 10px 40px rgba(176, 224, 230, 0.5)",
       fontSize: "8rem"
@@ -78,7 +78,7 @@ const FONT_CONFIGURATION = {
       fontFamily: "SonicBurstDense",
       color: "#1e90ff",
       textShadow: "0 10px 30px rgba(30, 144, 255, 0.5)",
-      fontSize: "8rem"
+      fontSize: "5rem"
     },
     {
       id: "section4-top-right",
@@ -89,7 +89,7 @@ const FONT_CONFIGURATION = {
       fontFamily: "CrosshatchPattern",
       color: "#b2838fff",
       textShadow: "0 0 20px rgba(47, 79, 79, 0.8)",
-      fontSize: "8rem"
+      fontSize: "5rem"
     },
     {
       id: "section4-bottom-left",
