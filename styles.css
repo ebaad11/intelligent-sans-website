@@ -161,6 +161,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'IceIceBaby';
+    src: url('fonts/ice_ice_baby.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ========================================
    RESET & BASE STYLES
    ======================================== */
@@ -441,17 +449,17 @@ body {
 
 /* --- Section 4 (Patterns) Variations --- */
 .page-section[data-section="4"] .express-top-left {
-    top: 5%;
-    left: 3%;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    transform: rotate(-8deg);
+    top: 3%;
+    left: 2%;
+    font-size: clamp(3rem, 7vw, 6rem);
+    transform: rotate(-5deg);
 }
 
 .page-section[data-section="4"] .express-top-right {
-    top: 5%;
-    right: 3%;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    transform: rotate(4deg);
+    top: 12%;
+    right: 2%;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    transform: rotate(3deg);
 }
 
 .page-section[data-section="4"] .express-bottom-left {

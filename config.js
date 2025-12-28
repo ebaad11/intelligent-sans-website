@@ -78,7 +78,7 @@ const FONT_CONFIGURATION = {
       fontFamily: "SonicBurstDense",
       color: "#1e90ff",
       textShadow: "0 10px 30px rgba(30, 144, 255, 0.5)",
-      fontSize: "5rem"
+      fontSize: "7rem"
     },
     {
       id: "section4-top-right",
@@ -89,7 +89,7 @@ const FONT_CONFIGURATION = {
       fontFamily: "CrosshatchPattern",
       color: "#b2838fff",
       textShadow: "0 0 20px rgba(47, 79, 79, 0.8)",
-      fontSize: "5rem"
+      fontSize: "6rem"
     },
     {
       id: "section4-bottom-left",
