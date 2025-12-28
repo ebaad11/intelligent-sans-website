@@ -89,7 +89,7 @@ const FONT_CONFIGURATION = {
       fontFamily: "CrosshatchPattern",
       color: "#b2838fff",
       textShadow: "0 0 20px rgba(47, 79, 79, 0.8)",
-      fontSize: "6rem"
+      fontSize: "7rem"
     },
     {
       id: "section4-bottom-left",
