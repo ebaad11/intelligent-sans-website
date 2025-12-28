@@ -248,12 +248,8 @@ function initJoinBetaButton() {
 }
 
 function handleBetaSignup() {
-    // TODO: Add your beta signup logic here
-    // For now, just show an alert
-    alert('Beta signup coming soon! 🚀');
-
-    // Example: You could open a modal, redirect to a form, etc.
-    // window.location.href = '/beta-signup';
+    // Open the beta signup form in a new tab
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSf8Lpbr-bJn9X1q0uUSud0Q1FcO5esdJkIU_RCTXLOW-B3bKw/viewform?usp=header', '_blank');
 }
 
 // ========================================

@@ -52,7 +52,7 @@ const FONT_CONFIGURATION = {
       section: 3,
       position: "bottom-right",
       text: "ICE",
-      fontFile: "iced_water.ttf",
+      fontFile: "ice_ice_baby.ttf",
       fontFamily: "Ice",
       color: "#b0e0e6",
       textShadow: "0 10px 40px rgba(176, 224, 230, 0.5)",
@@ -62,61 +62,6 @@ const FONT_CONFIGURATION = {
       id: "section4-center",
       section: 4,
       position: "center",
-      text: "STUFF",
-      fontFile: "DNA.ttf",
-      fontFamily: "DNA",
-      color: "#a2a1ddff",
-      textShadow: "0 10px 30px rgba(65, 105, 225, 0.5)",
-      fontSize: "12rem"
-    },
-    {
-      id: "section4-top-left",
-      section: 4,
-      position: "top-left",
-      text: "Beans",
-      fontFile: "bean can.ttf",
-      fontFamily: "BeanCan",
-      color: "#a0522d",
-      textShadow: "0 0 25px rgba(160, 82, 45, 0.6)",
-      fontSize: "8rem"
-    },
-    {
-      id: "section4-top-right",
-      section: 4,
-      position: "top-right",
-      text: "PAWS",
-      fontFile: "paws.ttf",
-      fontFamily: "Paws",
-      color: "#f5f5f5ff",
-      textShadow: "0 10px 30px rgba(255, 153, 153, 0.5)",
-      fontSize: "8rem"
-    },
-    {
-      id: "section4-bottom-left",
-      section: 4,
-      position: "bottom-left",
-      text: "Rose Petals",
-      fontFile: "Rose petals.ttf",
-      fontFamily: "Rose petals",
-      color: "#a25a72",
-      textShadow: "0 10px 30px rgba(255, 105, 180, 0.4)",
-      fontSize: "8rem"
-    },
-    {
-      id: "section4-bottom-right",
-      section: 4,
-      position: "bottom-right",
-      text: "Stars",
-      fontFile: "stars.ttf",
-      fontFamily: "Stars",
-      color: "#ffd700",
-      textShadow: "0 10px 30px rgba(255, 215, 0, 0.5)",
-      fontSize: "8rem"
-    },
-    {
-      id: "section5-center",
-      section: 5,
-      position: "center",
       text: "Patterns",
       fontFile: "tiger_liberation.ttf",
       fontFamily: "TigerLiberation",
@@ -125,8 +70,8 @@ const FONT_CONFIGURATION = {
       fontSize: "12rem"
     },
     {
-      id: "section5-top-left",
-      section: 5,
+      id: "section4-top-left",
+      section: 4,
       position: "top-left",
       text: "SONIC",
       fontFile: "sonic_burst_dense.ttf",
@@ -136,8 +81,8 @@ const FONT_CONFIGURATION = {
       fontSize: "8rem"
     },
     {
-      id: "section5-top-right",
-      section: 5,
+      id: "section4-top-right",
+      section: 4,
       position: "top-right",
       text: "CROSSHATCH",
       fontFile: "crosshatch_pattern.ttf",
@@ -147,8 +92,8 @@ const FONT_CONFIGURATION = {
       fontSize: "8rem"
     },
     {
-      id: "section5-bottom-left",
-      section: 5,
+      id: "section4-bottom-left",
+      section: 4,
       position: "bottom-left",
       text: "GLASS",
       fontFile: "glass.ttf",
@@ -158,14 +103,69 @@ const FONT_CONFIGURATION = {
       fontSize: "8rem"
     },
     {
-      id: "section5-bottom-right",
-      section: 5,
+      id: "section4-bottom-right",
+      section: 4,
       position: "bottom-right",
       text: "FINGERPRINTS",
       fontFile: "fingerprints.ttf",
       fontFamily: "Fingerprints",
       color: "#d4a574",
       textShadow: "0 10px 30px rgba(212, 165, 116, 0.5)",
+      fontSize: "8rem"
+    },
+    {
+      id: "section5-center",
+      section: 5,
+      position: "center",
+      text: "Consists",
+      fontFile: "DNA.ttf",
+      fontFamily: "DNA",
+      color: "#a2a1ddff",
+      textShadow: "0 10px 30px rgba(65, 105, 225, 0.5)",
+      fontSize: "12rem"
+    },
+    {
+      id: "section5-top-left",
+      section: 5,
+      position: "top-left",
+      text: "Beans",
+      fontFile: "bean can.ttf",
+      fontFamily: "BeanCan",
+      color: "#a0522d",
+      textShadow: "0 0 25px rgba(160, 82, 45, 0.6)",
+      fontSize: "8rem"
+    },
+    {
+      id: "section5-top-right",
+      section: 5,
+      position: "top-right",
+      text: "PAWS",
+      fontFile: "paws.ttf",
+      fontFamily: "Paws",
+      color: "#f5f5f5ff",
+      textShadow: "0 10px 30px rgba(255, 153, 153, 0.5)",
+      fontSize: "8rem"
+    },
+    {
+      id: "section5-bottom-left",
+      section: 5,
+      position: "bottom-left",
+      text: "Rose Petals",
+      fontFile: "Rose petals.ttf",
+      fontFamily: "Rose petals",
+      color: "#a25a72",
+      textShadow: "0 10px 30px rgba(255, 105, 180, 0.4)",
+      fontSize: "8rem"
+    },
+    {
+      id: "section5-bottom-right",
+      section: 5,
+      position: "bottom-right",
+      text: "Stars",
+      fontFile: "stars.ttf",
+      fontFamily: "Stars",
+      color: "#ffd700",
+      textShadow: "0 10px 30px rgba(255, 215, 0, 0.5)",
       fontSize: "8rem"
     }
   ]

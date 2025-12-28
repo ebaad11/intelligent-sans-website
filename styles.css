@@ -969,6 +969,13 @@ body {
         font-size: clamp(1.2rem, 5vw, 2rem);
         padding: 0 1rem;
     }
+
+    /* Font download popup - hide on tablet */
+    .font-download-popup {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
 }
 
 /* Mobile styles */
@@ -1065,10 +1072,11 @@ body {
         font-size: clamp(1rem, 5vw, 1.5rem);
     }
 
-    /* Font download popup */
+    /* Font download popup - hide on mobile */
     .font-download-popup {
-        font-size: 0.75rem;
-        padding: 0.6rem 0.8rem;
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
     }
 }
 
@@ -1173,4 +1181,29 @@ body {
     opacity: 0.7;
     text-align: center;
     margin: 0;
+}
+
+/* ========================================
+   MOBILE DOWNLOAD MESSAGE
+   ======================================== */
+.mobile-download-message {
+    display: none;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-align: center;
+    z-index: 20;
+    white-space: nowrap;
+}
+
+/* Show only on mobile/tablet */
+@media (max-width: 768px) {
+    .mobile-download-message {
+        display: block;
+    }
 }
