@@ -208,6 +208,7 @@ body {
 .scroll-container {
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* Dynamic viewport height - accounts for iOS browser chrome */
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -217,6 +218,7 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* Dynamic viewport height - accounts for iOS browser chrome */
     scroll-snap-align: start;
     scroll-snap-stop: always;
     display: flex;
@@ -775,7 +777,7 @@ body {
 .join-beta-btn {
     position: fixed !important;
     right: 1.5rem !important;
-    bottom: 1.5rem !important;
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important;
     top: unset !important;
     z-index: 9999;
 
@@ -820,7 +822,7 @@ body {
 .download-btn {
     position: fixed !important;
     left: 1.5rem !important;
-    bottom: 1.5rem !important;
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important;
     top: unset !important;
     z-index: 9999;
 
@@ -884,14 +886,14 @@ body {
 
     .join-beta-btn {
         right: 1rem;
-        bottom: 1rem;
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
         padding: 0.8rem 1rem;
         font-size: 0.9rem;
     }
 
     .download-btn {
         left: 1rem;
-        bottom: 1rem;
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
         padding: 0.8rem 1rem;
         font-size: 0.9rem;
     }
@@ -1005,7 +1007,7 @@ body {
     /* Buttons - smaller on mobile */
     .join-beta-btn {
         right: 0.75rem;
-        bottom: 0.75rem;
+        bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
         padding: 0.5rem 0.7rem;
         font-size: 0.7rem;
     }
@@ -1016,7 +1018,7 @@ body {
 
     .download-btn {
         left: 0.75rem;
-        bottom: 0.75rem;
+        bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
         padding: 0.5rem 0.7rem;
         font-size: 0.7rem;
     }
@@ -1211,7 +1213,7 @@ body {
 .mobile-download-message {
     display: none;
     position: absolute;
-    bottom: 1.5rem;
+    top: calc(1.5rem + env(safe-area-inset-top, 0px));
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Intelligent Sans', 'Space Grotesk', 'Inter', sans-serif;
